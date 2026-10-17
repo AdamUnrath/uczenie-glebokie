@@ -2,12 +2,15 @@
 
 Repozytorium z zadaniami z przedmiotu **Uczenie głębokie** (2026).
 
+## Autor
+
+Adam Unrath
 
 ## Zawartość
 
 | Plik | Opis |
 |------|------|
-| `komiwojazer.py` | Problem komiwojażera rozwiązany metodą brute force (Python) |
+| `komiwojazer.ipynb` | Notebook Jupyter: problem komiwojażera (brute force) z wizualizacjami i wnioskami, wyniki są już zapisane w pliku |
 
 ## Zadanie: problem komiwojażera
 
@@ -22,14 +25,6 @@ Program szuka najkrótszej trasy, która zaczyna się w Gdańsku, odwiedza każd
 3. Dla każdej trasy program sumuje odległości między kolejnymi miastami.
 4. Zapamiętywana jest trasa o najmniejszej łącznej długości.
 
-### Uruchomienie
-
-Wymagany jest Python 3 (nie trzeba instalować żadnych dodatkowych bibliotek).
-
-```bash
-python komiwojazer.py
-```
-
 ### Wynik
 
 ```
@@ -38,6 +33,23 @@ Długość: 1380 km
 Liczba sprawdzonych tras: 24
 ```
 
-### Uwaga
+### Wizualizacje (w notebooku)
 
-Metoda brute force sprawdza wszystkie możliwe trasy, więc liczba obliczeń rośnie jak silnia liczby miast. Dla 5 miast działa natychmiast, ale przy większej liczbie miast staje się niepraktyczna.
+- **Najlepsza trasa na wykresie:** strzałki między miastami z podpisanymi odległościami (do rysunku użyto przybliżonych współrzędnych geograficznych miast, więc wykres jest poglądowy).
+- **Porównanie wszystkich 24 tras:** wykres słupkowy posortowany według długości z wyróżnioną najkrótszą trasą. Dwie trasy mają tę samą najmniejszą długość, bo to ta sama pętla przejechana w przeciwnych kierunkach (macierz odległości jest symetryczna).
+
+## Uruchomienie
+
+Wyniki i wykresy są widoczne od razu po otwarciu `komiwojazer.ipynb` na GitHubie. Aby uruchomić notebook samodzielnie:
+
+- **Google Colab:** wejdź na [colab.research.google.com](https://colab.research.google.com), wybierz **File → Upload notebook** (albo **GitHub** i wklej adres repozytorium) i uruchom wszystkie komórki (**Runtime → Run all**).
+- **Lokalnie:** zainstaluj biblioteki i uruchom Jupyter.
+
+```bash
+pip install jupyter matplotlib
+jupyter notebook komiwojazer.ipynb
+```
+
+## Uwaga
+
+Metoda brute force sprawdza **(n−1)!** tras, więc liczba obliczeń rośnie bardzo szybko. Dla 5 miast działa natychmiast, ale już dla 15 miast byłoby to ponad 87 miliardów tras, więc przy większej liczbie miast stosuje się metody przybliżone (heurystyki, algorytmy genetyczne, uczenie ze wzmocnieniem).
