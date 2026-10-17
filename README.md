@@ -1,10 +1,6 @@
 # Uczenie głębokie
 
-Repozytorium z zadaniami z przedmiotu **Uczenie głębokie** (2026).
-
-## Autor
-
-Adam Unrath
+Repozytorium z zadaniami z przedmiotu **Uczenie głębokie
 
 ## Zawartość
 
